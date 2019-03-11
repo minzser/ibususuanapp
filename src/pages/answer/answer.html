@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Soalan dan Jawapan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+
+    <ion-card>
+        <ion-item color="primary">
+        <h2 style="color: white;">{{qname}}</h2>
+        <p>{{qdate}}</p>
+      </ion-item><br>
+      <ion-card-content>
+          <p>Kategori: {{qcategory}}</p><br>
+        <p>{{qquestion}}</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col center text-center>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+<br><p text-center>Jawapan:</p>
+
+<p *ngIf="!check" text-center>Tiada. <br>Sila tunggu Ustaz/Ustazah untuk menjawab soalan ini.</p>
+
+<ion-card *ngFor="let card of cards">
+    <ion-item color="secondary">
+    <h2 style="color: white;">{{card.name}}</h2>
+    <p>{{card.date}}</p>
+  </ion-item><br>
+  <ion-card-content>
+    <p>{{card.answer}}</p>
+  </ion-card-content>
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>
+</ion-card>
+<ion-fab *ngIf="canAnswer" bottom center>
+    <button ion-fab color="secondary" (click)="openHintModal()"> <ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

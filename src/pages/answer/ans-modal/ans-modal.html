@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Jawab Soalan</ion-title>
+      <ion-buttons end>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+      {{questionid}}
+      <ion-input type="hidden" [(ngModel)]="datez" name="datez" value="{{date | date: 'yyyy/MM/dd'}}"></ion-input>
+      <ion-item>
+          <ion-label stacked>Jawapan</ion-label>
+  <ion-textarea [(ngModel)]="answer" maxlength="500" placeholder="Maksimum 500 patah perkataan"></ion-textarea>
+      </ion-item>
+  <ion-footer>
+      <button ion-button full color="primary" (click)="ans()">Jawab
+        </button>
+    <button ion-button full color="danger" (click)="dismiss()">Batal
+    </button>
+  </ion-footer>
+</ion-content>

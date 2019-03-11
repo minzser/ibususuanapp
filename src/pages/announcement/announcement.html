@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Pengumuman</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+    <ion-input type="hidden" [(ngModel)]="datez" name="datez" value="{{checkdate | date: 'yyyy/MM/dd'}}"></ion-input>
+    <ion-card *ngFor="let card of cards">
+        <ion-item color="danger">
+        <h2 style="color: white;">{{card.name}}</h2>
+        <p>{{card.date}}</p>
+      </ion-item><br>
+      <ion-card-content>
+        <p>{{card.announcement}}</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col center text-center>
+            <ion-note *ngIf="card.icnumber == icnum">
+                <button style="color:red;" ion-button color="primary" clear small icon-left (click)="deletez(card.anid)">
+                    <ion-icon name='trash'></ion-icon>
+                    Buang
+                  </button>
+            </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-fab bottom center>
+        <button ion-fab color="secondary" (click)="openHintModal()"> <ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+  </ion-content>

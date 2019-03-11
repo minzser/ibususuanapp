@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Profil Admin</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="bg">
+  
+    <div>
+      <img src="assets/imgs/profil.png" />
+    </div>
+    <div padding>
+      <ion-card class="bg">
+  
+  
+        <div>
+          <ion-card-content>
+            <h1 color="primary">{{name}}</h1>
+            <h2>{{city}} , {{state}}</h2>
+            <br>
+            <h2>Nombor IC: {{icnumber}}</h2>
+            <h2>Nombor Tel: {{telnum}}</h2>
+            <h2>Emel: {{email}}</h2>
+          </ion-card-content>
+          <ion-item *ngIf="role=='IbuSusuan'">
+              <ion-label>Status Sebagai Ibu Susuan</ion-label>
+              <ion-toggle [(ngModel)]="status" (ionChange)="toggle()"></ion-toggle>
+            </ion-item>
+        </div>
+        
+      </ion-card><br><br><br><br>
+        <ion-fab center bottom>
+          <button ion-fab color="danger" (click)="edit()">
+            <ion-icon name="create"></ion-icon>
+          </button>
+        </ion-fab>
+    </div>
+  
+  
+  
+  </ion-content>

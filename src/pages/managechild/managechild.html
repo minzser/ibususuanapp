@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ManagechildPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Senarai Anak Susuan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+
+    <div class="login-box">
+        <ion-row>
+            <ion-col>
+                <h5 style="color: white;" text-center>Senarai anak susuan:</h5>
+              <ion-list inset>
+                  <ion-item *ngFor="let item of items2" (click)="viewEntry({ record: item })">
+                      <h2>Nama: {{item.name}}</h2>
+                      <h2>MyKid: {{item.mykid}}</h2>
+                      <h2>Kenyang: {{item.full}} kali</h2>
+                      <h2>Ibu Kandung: {{item.parent}}</h2>
+                      <h2>IC Ibu Kandung: {{item.icparent}}</h2>
+                    </ion-item>
+              </ion-list>
+            <h5 style="color:white;" *ngIf="!checking">Tiada.</h5>
+      </ion-col>
+    
+    </ion-row>
+    
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Tambah Ustaz/Ustazah</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="login-content" padding>
+      <div class="login-box">
+    <h4 style="color:white;" text-center>Sila isi maklumat di bawah untuk tambah ustaz/ustazah.</h4>
+          <ion-row>
+            <ion-col>
+              <ion-list inset>
+
+                  <ion-item>
+                      <ion-label>Nombor IC</ion-label>
+                        <ion-input type="text" [(ngModel)]="ic" name="ic"></ion-input>
+                    </ion-item>
+  
+                  <ion-item>
+                    <ion-label>Nama</ion-label>
+                      <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
+                  </ion-item>
+  
+                  <ion-item>
+                      <ion-label>Bandar</ion-label>
+                        <ion-input type="text" [(ngModel)]="city" name="city"></ion-input>
+                    </ion-item>
+  
+                    <ion-item>
+                        <ion-label>Negeri</ion-label>
+                                    <ion-select [(ngModel)]="state">
+                                      <ion-option value="Johor">Johor</ion-option>
+                                      <ion-option value="Kedah">Kedah</ion-option>
+                                      <ion-option value="Kelantan">Kelantan</ion-option>
+                                      <ion-option value="Melaka">Melaka</ion-option>
+                                      <ion-option value="Negeri Sembilan">Negeri Sembilan</ion-option>
+                                      <ion-option value="Pahang">Pahang</ion-option>
+                                      <ion-option value="Penang">Penang</ion-option>
+                                      <ion-option value="Perak">Perak</ion-option>
+                                      <ion-option value="Perlis">Perlis</ion-option>
+                                      <ion-option value="Sabah">Sabah</ion-option>
+                                      <ion-option value="Sarawak">Sarawak</ion-option>
+                                      <ion-option value="Selangor">Selangor</ion-option>
+                                      <ion-option value="Terengganu">Terengganu</ion-option>
+                                    </ion-select>
+                      </ion-item>
+  
+                    <ion-item>
+                        <ion-label>Nom.Tel</ion-label>
+                          <ion-input type="number" [(ngModel)]="telnum" name="telnum"></ion-input>
+                      </ion-item>
+  
+                    <ion-item>
+                        <ion-label>Emel</ion-label>
+                          <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+                      </ion-item>
+
+                      <ion-item>
+                          <ion-label>Kata Laluan</ion-label>
+                            <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+                        </ion-item>
+  
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row>
+            <ion-col class="signup-col">
+              <button ion-button class="submit-btn" full (click)="signup()">Tambah</button>
+            </ion-col>
+          </ion-row>
+          
+      </div>
+  
+    </ion-content>
+  
+  

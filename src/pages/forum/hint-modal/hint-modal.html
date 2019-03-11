@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Tanya Soalan</ion-title>
+      <ion-buttons end>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+      
+      <ion-input type="hidden" [(ngModel)]="datez" name="datez" value="{{date | date: 'yyyy/MM/dd'}}"></ion-input>
+      <ion-item>
+          <ion-label>Kategori</ion-label>
+          <ion-select [(ngModel)]="category">
+            <ion-option value="Hukum Penyusuan">Hukum Penyusuan</ion-option>
+            <ion-option value="Nasab">Nasab</ion-option>
+            <ion-option value="Perkahwinan">Perkahwinan</ion-option>
+            <ion-option value="Pergaulan">Pergaulan</ion-option>
+            <ion-option value="Pusaka">Pusaka</ion-option>
+            <ion-option value="Lain-Lain">Lain-Lain</ion-option>
+          </ion-select>
+        </ion-item><br>
+      <ion-item>
+          <ion-label stacked>Soalan</ion-label>
+  <ion-textarea [(ngModel)]="question" maxlength="250" placeholder="Maksimum 250 patah perkataan"></ion-textarea>
+      </ion-item>
+  <ion-footer>
+      <button ion-button full color="primary" (click)="ask()">Hantar
+        </button>
+    <button ion-button full color="danger" (click)="dismiss()">Batal
+    </button>
+  </ion-footer>
+</ion-content>

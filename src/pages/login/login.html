@@ -1,0 +1,41 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+  <div class="login-box" style="text-align:center;">
+  <h1 ion-text color="light">ICareMum'sMilk</h1>
+  <h5 ion-text color="light">"Suatu platform untuk ibu susuan di Malaysia"</h5>
+  <ion-row>
+    <ion-col>
+      <ion-list inset>
+        
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="ic" name="ic" placeholder="Nombor IC"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Kata Laluan"></ion-input>
+        </ion-item>
+        
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col class="signup-col">
+      <button ion-button class="submit-btn" full (click)="login()">Log Masuk</button>
+      <button ion-button class="register-btn" block clear (click)="toRegister()">Daftar Akaun</button>
+      <button ion-button class="register-btn" block clear (click)="toCekData()">Semak Data Anak & Ibu Susuan</button>
+    </ion-col>
+  </ion-row>
+  
+  
+</div>
+
+
+</ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Daftar Anak Susuan</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="help()"><ion-icon name="md-information-circle"></ion-icon>&nbsp;&nbsp;Info</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+    <div class="login-box">
+        <ion-row>
+            <ion-col>
+              <ion-list inset>
+  <br><br>
+    <div text-center id="asd"> Sila masukkan MyKid bayi. </div><br><br><br>
+    <ion-item>
+        <ion-label>MyKid</ion-label>
+        <ion-input type="text" [(ngModel)]="mykidz" name="mykidz"></ion-input>
+      </ion-item>
+      <br>
+
+        <div text-center id="topButtons"> 
+            <button ion-button round (click)="cari()">Cari</button>
+          </div>
+        </ion-list>
+            
+      </ion-col>
+
+    </ion-row>
+    
+</div>
+
+<div class="login-box" *ngIf="checkButton =='yes'">
+    <ion-row>
+        <ion-col>
+          <ion-list inset>
+              <h5 *ngIf="newmykid ==''" style="color: white;" text-center>Tiada anak yang mempunyai MyKid tersebut.</h5>
+              <ion-item-sliding>
+              <ion-item *ngIf="newmykid !=''">
+                  <h2>Nama: {{newname}}</h2>
+                  <h2>MyKid: {{newmykid}}</h2>
+                  <h2>Ibu Kandung: {{newparent}}</h2>
+                  <h2>IC Ibu Kandung: {{newicparent}}</h2>
+                </ion-item>
+                <ion-item-options side="right">
+                    <button ion-button color="danger" (click)="assign()">Daftar</button>
+                </ion-item-options>
+              </ion-item-sliding>
+          </ion-list>
+        
+  </ion-col>
+
+</ion-row>
+
+</div>
+
+
+</ion-content>

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the SearchibusudataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Data Ibu Susuan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+    <div class="login-box">
+        <ion-row>
+            <ion-col>
+              <ion-list inset>
+  <br><br>
+    <div text-center id="asd"> Sila masukkan IC ibu susuan. </div><br><br><br>
+    <ion-item>
+        <ion-label>IC</ion-label>
+        <ion-input type="text" [(ngModel)]="ic" name="ic"></ion-input>
+      </ion-item>
+      <br>
+
+        <div text-center id="topButtons"> 
+            <button ion-button round (click)="cari()">Cari</button>
+          </div>
+        </ion-list>
+            
+      </ion-col>
+
+    </ion-row>
+    
+</div>
+
+<div class="login-box" *ngIf="checkButton =='yes'">
+    <ion-row>
+        <ion-col>
+          <ion-list inset>
+              <h5 *ngIf="newic ==''" style="color: white;" text-center>Tiada ibu susuan yang mempunyai IC tersebut.</h5>
+             
+              <ion-item *ngFor="let item of items2" (click)="viewEntry({ record: item })">
+                  <h2>Nama: {{item.name}}</h2>
+                  <h2>Nombor IC: {{item.icnumber}}</h2>
+                </ion-item>
+           
+          </ion-list>
+        
+  </ion-col>
+
+</ion-row>
+
+</div>
+
+</ion-content>

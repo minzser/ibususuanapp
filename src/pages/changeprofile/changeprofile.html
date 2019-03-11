@@ -1,0 +1,100 @@
+<!--
+  Generated template for the ChangeprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Sunting Profil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+    <div class="login-box">
+  <h3 style="color:white;" text-center>Sunting Profil</h3>
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+
+                <ion-item>
+                  <ion-label>Nama</ion-label>
+                    <ion-input type="text" [(ngModel)]="name" name="name" value={{name}}></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Bandar</ion-label>
+                      <ion-input type="text" [(ngModel)]="city" name="city" value={{city}}></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-label>Negeri</ion-label>
+                                  <ion-select [(ngModel)]="state">
+                                    <ion-option value="Johor">Johor</ion-option>
+                                    <ion-option value="Kedah">Kedah</ion-option>
+                                    <ion-option value="Kelantan">Kelantan</ion-option>
+                                    <ion-option value="Melaka">Melaka</ion-option>
+                                    <ion-option value="Negeri Sembilan">Negeri Sembilan</ion-option>
+                                    <ion-option value="Pahang">Pahang</ion-option>
+                                    <ion-option value="Penang">Penang</ion-option>
+                                    <ion-option value="Perak">Perak</ion-option>
+                                    <ion-option value="Perlis">Perlis</ion-option>
+                                    <ion-option value="Sabah">Sabah</ion-option>
+                                    <ion-option value="Sarawak">Sarawak</ion-option>
+                                    <ion-option value="Selangor">Selangor</ion-option>
+                                    <ion-option value="Terengganu">Terengganu</ion-option>
+                                  </ion-select>
+                    </ion-item>
+
+                  <ion-item>
+                      <ion-label>Nom.Tel</ion-label>
+                        <ion-input type="number" [(ngModel)]="telnum" name="telnum" value={{telnum}}></ion-input>
+                    </ion-item>
+
+                  <ion-item>
+                      <ion-label>Emel</ion-label>
+                        <ion-input type="text" [(ngModel)]="email" name="email" value={{email}}></ion-input>
+                    </ion-item>
+
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full (click)="edit()">Sunting</button>
+          </ion-col>
+        </ion-row>
+        
+    </div>
+
+<br>
+    <div class="login-box">
+        <h3 style="color:white;" text-center>Tukar Kata Laluan</h3>
+              <ion-row>
+                <ion-col>
+                  <ion-list inset>
+      
+                      <ion-item>
+                        <ion-label>Kata Laluan Terkini</ion-label>
+                          <ion-input type="password" [(ngModel)]="oldpass" name="oldpass"></ion-input>
+                      </ion-item>
+      
+                      <ion-item>
+                          <ion-label>Kata Laluan Baru</ion-label>
+                            <ion-input type="password" [(ngModel)]="newpass" name="newpass"></ion-input>
+                        </ion-item>
+      
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+              
+              <ion-row>
+                <ion-col class="signup-col">
+                  <button ion-button class="submit-btn" full (click)="changepass()">Tukar</button>
+                </ion-col>
+              </ion-row>
+              
+          </div>
+  </ion-content>
+

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>ICareMum'sMilk</ion-title>
+        <ion-buttons end>
+                <button ion-button icon-only (click)="showNotifications()" *ngIf="role == 'IbuSusuan'">
+                        <ion-badge color="danger">{{ count }}</ion-badge>
+                        <ion-icon name="notifications"></ion-icon>
+                    </button>
+                <button ion-button (click)="presentPopover($event)"><ion-icon name="more" style="zoom:1.7;"></ion-icon></button>
+        </ion-buttons>
+      </ion-navbar>
+</ion-header>
+
+<ion-content class="bg" padding>
+        <ion-grid style="height: 100%">
+                <ion-row justify-content-center align-items-center style="height: 100%">
+        <div class="pins">
+            <ion-card class="pin">
+                <img src="../assets/imgs/pp.png" (click)="toProfile()"/>
+            </ion-card >
+        
+
+                <ion-card class="pin">
+                    <img src="../assets/imgs/sl.png" (click)="toFAQ()"/>
+                </ion-card >
+           
+
+                    <ion-card class="pin">
+                        <img src="../assets/imgs/db.png" (click)="toBabydata()"/>
+                    </ion-card >
+              
+
+                        <ion-card class="pin">
+                            <img src="../assets/imgs/f.png" (click)="toForum()"/>
+                        </ion-card >
+                   
+                            <ion-card class="pin">
+                                <img src="../assets/imgs/cari.png" (click)="toSearch()"/>
+                            </ion-card >
+                       
+
+                                <ion-card class="pin">
+                                    <img src="../assets/imgs/p.png" (click)="toAnnounce()"/>
+                                </ion-card >
+                            </div>
+                </ion-row>
+        </ion-grid>
+                            <!--<ion-card (click)="forum()">
+                                <ion-label>Ruangan Iklan</ion-label>
+                                    <img src="assets/imgs/iklan.png" />
+                                  </ion-card>-->
+
+</ion-content>

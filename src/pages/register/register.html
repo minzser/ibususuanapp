@@ -1,0 +1,93 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content class="login-content" padding>
+    <!--<ion-row class="logo-row">
+    </ion-row>-->
+    <div class="login-box">
+      <h1 ion-text color="light" text-center>Pendaftaran Akaun</h1>
+      <h5 color="light" text-center>Isi maklumat di bawah untuk mendaftar akaun.</h5>
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+
+                <ion-item>
+                    <ion-label>Daftar sebagai..</ion-label>
+                    <ion-select [(ngModel)]="role">
+                      <ion-option value="Parent">Ibu Kandung</ion-option>
+                      <ion-option value="IbuSusuan">Ibu Susuan</ion-option>
+                    </ion-select>
+                  </ion-item>
+              
+              <ion-item>
+                  <ion-label>IC</ion-label>
+                  <ion-input type="number" [(ngModel)]="ic" name="ic" placeholder="Cth: 770101065298" maxlength="12"></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                  <ion-label>Nama</ion-label>
+                  <ion-input type="text" [(ngModel)]="name" name="name" placeholder="Cth: Salmah binti Harun"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>Emel</ion-label>
+                  <ion-input type="text" [(ngModel)]="email" name="email" placeholder="Cth: salmah77@gmail.com"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>Bandar</ion-label>
+                    <ion-input type="text" [(ngModel)]="city" name="city" placeholder="Cth: Ipoh"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Negeri</ion-label>
+                                <ion-select [(ngModel)]="state">
+                                  <ion-option value="Johor">Johor</ion-option>
+                                  <ion-option value="Kedah">Kedah</ion-option>
+                                  <ion-option value="Kelantan">Kelantan</ion-option>
+                                  <ion-option value="Melaka">Melaka</ion-option>
+                                  <ion-option value="Negeri Sembilan">Negeri Sembilan</ion-option>
+                                  <ion-option value="Pahang">Pahang</ion-option>
+                                  <ion-option value="Penang">Penang</ion-option>
+                                  <ion-option value="Perak">Perak</ion-option>
+                                  <ion-option value="Perlis">Perlis</ion-option>
+                                  <ion-option value="Sabah">Sabah</ion-option>
+                                  <ion-option value="Sarawak">Sarawak</ion-option>
+                                  <ion-option value="Selangor">Selangor</ion-option>
+                                  <ion-option value="Terengganu">Terengganu</ion-option>
+                                </ion-select>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-label>Nombor Tel</ion-label>
+                        <ion-input type="text" [(ngModel)]="telnum" name="telnum" placeholder="Cth: 0123456789"></ion-input>
+                    </ion-item>
+
+              <ion-item>
+                  <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Kata laluan"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-input type="password" [(ngModel)]="vpassword" name="vpassword" placeholder="Kata laluan sekali lagi"></ion-input>
+              </ion-item>
+
+            </ion-list>
+
+            <div id="asd" text-center>
+                Nota: Kata laluan anda hendaklah melebihi 7 huruf.
+              </div>
+              <br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full (click)="signup()">Daftar</button>
+            <button ion-button class="register-btn" block clear (click)="regUstaz()">Daftar sebagai Ustaz/Ustazah</button>
+            <button ion-button class="register-btn" block clear (click)="toLogin()">Dah ada akaun? Log masuk sekarang</button>
+          </ion-col>
+        </ion-row>
+        
+    </div>
+  </ion-content>

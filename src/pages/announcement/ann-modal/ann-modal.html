@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Pengumuman</ion-title>
+      <ion-buttons end>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+      
+      <ion-input type="hidden" [(ngModel)]="datez" name="datez" value="{{date | date: 'yyyy/MM/dd'}}"></ion-input>
+      <ion-item>
+          <ion-label stacked>Ayat</ion-label>
+  <ion-textarea [(ngModel)]="announcement" maxlength="250" placeholder="Maksimum 250 patah perkataan"></ion-textarea>
+      </ion-item>
+  <ion-footer>
+      <button ion-button full color="primary" (click)="ask()">Hantar
+        </button>
+    <button ion-button full color="danger" (click)="dismiss()">Batal
+    </button>
+  </ion-footer>
+</ion-content>

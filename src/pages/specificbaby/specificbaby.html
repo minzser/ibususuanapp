@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Anak Susuan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content">
+
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+            <div class="login-box">
+                <ion-row>
+                  <ion-col><img src="../assets/imgs/babyicon.png"/>
+                    <ion-list inset>
+                      
+                      <ion-item>
+                        Nama: {{name}}
+                      </ion-item>
+        
+                      <ion-item>
+                          MyKid: {{mykid}}
+                        </ion-item>
+        
+                        <ion-item>
+                            Ibu Kandung: {{parent}}
+                          </ion-item>
+        
+                          <ion-item>
+                              Kenyang: {{full}} kali
+                            </ion-item>
+                        
+                    </ion-list>
+                    
+                  </ion-col>
+        
+                  
+                </ion-row>
+                <div text-center id="topButtons"> 
+                    <button ion-button round (click)="tambahkenyang()">+ Tambah Kenyang</button>
+                  </div>
+            </div>
+        </ion-row>
+      </ion-grid>
+
+   
+</ion-content>

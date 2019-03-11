@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Padam Ustaz/Ustazah</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="login-content" padding>
+  
+  <div class="login-box">
+      <ion-row>
+          <ion-col>
+            <ion-list inset>
+                <h5 style="color: white;" text-center>Senarai Ustaz/Ustazah:</h5>
+                <ion-item-sliding *ngFor="let item of items">
+                <ion-item>
+                    <h2>Nama: {{item.name}}</h2>
+                    <h2>Nombor IC: {{item.icnumber}}</h2>
+                    <h2>Nombor Tel: {{item.telnum}}</h2>
+                  </ion-item>
+                  <ion-item-options side="right">
+                      <button ion-button color="danger" (click)="viewEntry(item.icnumber)">Padam</button>
+                  </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+          
+    </ion-col>
+  
+  </ion-row>
+  
+  </div>
+  
+  
+  </ion-content>
+  

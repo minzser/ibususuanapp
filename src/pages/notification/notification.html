@@ -1,0 +1,39 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Notifikasi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+<br>
+    <ion-card *ngFor="let card of cards">
+        <ion-item color="primary">
+        <h2 style="color: white;">Daripada: {{card.namaparent}}</h2>
+        <p>{{card.date}}</p>
+      </ion-item>
+      <ion-card-content><br>
+        <p>{{card.namaparent}} ingin melantik anda sebagai ibu susuan. Sila berhubung dengan beliau untuk maklumat lanjut. Nombor Telefon: {{card.telnum}}</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+            <ion-note>
+                <button style="color:red;" ion-button color="primary" clear small icon-left (click)="delete(card.notid)">
+                    <ion-icon name='trash'></ion-icon>
+                    Buang
+                  </button>
+            </ion-note>
+        </ion-col>
+        <ion-col center text-center>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+</ion-content>

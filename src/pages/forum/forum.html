@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Forum</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content class="bg">
+    <ion-card *ngFor="let card of cards">
+        <ion-item color="primary">
+        <h2 style="color: white;">{{card.name}}</h2>
+        <p>{{card.date}}</p>
+      </ion-item><br>
+      <ion-card-content>
+          <p>Kategori: {{card.category}}</p><br>
+        <p>{{card.question}}</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-note *ngIf="canDelete">
+            <button style="color:red;" ion-button color="primary" clear small icon-left (click)="delete(card.questionid)">
+                <ion-icon name='trash'></ion-icon>
+                Buang
+              </button>
+        </ion-note>
+        <ion-note *ngIf="card.icnumber == queic">
+            <button style="color:red;" ion-button color="primary" clear small icon-left (click)="delete(card.questionid)">
+                <ion-icon name='trash'></ion-icon>
+                Buang
+              </button>
+        </ion-note>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+              <button ion-button color="primary" clear small icon-left (click)="viewEntry({ record: card })">
+                  <ion-icon name='text'></ion-icon>
+                  Jawapan
+                </button>
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-fab *ngIf="canAsk" bottom center>
+        <button ion-fab color="secondary" (click)="openHintModal()"> <ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+  </ion-content>

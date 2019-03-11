@@ -1,0 +1,81 @@
+<!--
+  Generated template for the SearchavailablePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Cari Ibu Susuan Sedia Ada</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="help()"><ion-icon name="md-information-circle"></ion-icon>&nbsp;&nbsp;Info</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+
+    <div class="login-box">
+        <ion-row>
+            <ion-col>
+              <ion-list inset>
+  <br><br>
+    <div text-center id="asd">Sila pilih negeri ibu susuan.</div><br><br><br>
+    <ion-item>
+        <ion-label>Negeri</ion-label>
+                    <ion-select [(ngModel)]="statez">
+                      <ion-option value="Johor">Johor</ion-option>
+                      <ion-option value="Kedah">Kedah</ion-option>
+                      <ion-option value="Kelantan">Kelantan</ion-option>
+                      <ion-option value="Melaka">Melaka</ion-option>
+                      <ion-option value="Negeri Sembilan">Negeri Sembilan</ion-option>
+                      <ion-option value="Pahang">Pahang</ion-option>
+                      <ion-option value="Penang">Penang</ion-option>
+                      <ion-option value="Perak">Perak</ion-option>
+                      <ion-option value="Perlis">Perlis</ion-option>
+                      <ion-option value="Sabah">Sabah</ion-option>
+                      <ion-option value="Sarawak">Sarawak</ion-option>
+                      <ion-option value="Selangor">Selangor</ion-option>
+                      <ion-option value="Terengganu">Terengganu</ion-option>
+                    </ion-select>
+      </ion-item>
+      <br>
+
+        <div text-center id="topButtons"> 
+            <button ion-button round (click)="cari()">Cari</button>
+          </div>
+        </ion-list>
+            
+      </ion-col>
+
+    </ion-row>
+    
+</div>
+
+<div class="login-box" *ngIf="checkButton =='yes'">
+    <ion-row>
+        <ion-col>
+          <ion-list inset>
+              <h5 *ngIf="confirmed =='no'" style="color: white;" text-center>Tiada ibu susuan di negeri ini.</h5>
+              <ion-item-sliding *ngFor="let item of items2">
+              <ion-item>
+                  <h2>Nama: {{item.name}}</h2>
+                  <h2>Bandar: {{item.city}}</h2>
+                  <h2>Nom. Tel: {{item.telnum}}</h2>
+                </ion-item>
+                <ion-item-options side="right">
+                    <button ion-button color="danger" (click)="notify(item.icnumber)">Beritahu</button>
+                </ion-item-options>
+              </ion-item-sliding>
+          </ion-list>
+        
+  </ion-col>
+
+</ion-row>
+
+</div>
+
+
+
+</ion-content>

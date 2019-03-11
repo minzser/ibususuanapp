@@ -1,0 +1,102 @@
+<!--
+  Generated template for the Searchibusudata2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Data Ibu Susuan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+    <div class="login-box">
+        <ion-row>
+          <ion-col><h2 style="color: white;">Ibu Susuan</h2>
+            <ion-list inset>
+              
+              <ion-item>
+                Nama: {{name}}
+              </ion-item>
+
+              <ion-item>
+                  IC Number: {{icnumber}}
+                </ion-item>
+
+                <ion-item>
+                    Bandar: {{city}}
+                  </ion-item>
+                  
+                  <ion-item>
+                      Negeri: {{state}}
+                    </ion-item>
+
+                    <ion-item>
+                        Nom. Tel: {{telnum}}
+                      </ion-item>
+            </ion-list>
+            
+          </ion-col>
+        </ion-row>
+    </div>
+
+
+    <div class="login-box">
+        <ion-row>
+          <ion-col><h2 style="color: white;">Senarai Anak Susuan</h2>
+            <ion-list inset *ngIf="checking">
+              
+                <ion-item *ngFor="let item of items2">
+                    Nama: {{item.cname}}<br>
+                    MyKid: {{item.mykid}}
+                  </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <h5 style="color:white;" *ngIf="!checking" text-center>Belum ada.</h5>
+    </div>
+
+    <div class="login-box">
+        <ion-row>
+          <ion-col><h2 style="color: white;">Senarai Anak Kandung</h2>
+            <ion-list inset *ngIf="checking3">
+              
+                <ion-item *ngFor="let item of items6">
+                    Nama: {{item.name}}<br>
+                    MyKid: {{item.mykid}}
+                  </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <h5 style="color:white;" *ngIf="!checking3" text-center>Belum ada.</h5>
+    </div>
+
+
+    <div class="login-box" *ngIf="canComment">
+        <ion-row>
+          <ion-col><h2 style="color: white;">Komen</h2>
+            <ion-list inset *ngIf="checking2">
+              
+                <ion-item *ngFor="let item of items4">
+                    {{item.name}}<br>
+                    {{item.rdate}}<br><br>
+                    {{item.review}}
+                  </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <h5 style="color:white;" *ngIf="!checking2" text-center>Belum ada.</h5>
+<br>
+        <ion-item>
+            <ion-input type="hidden" [(ngModel)]="cdatez" name="cdatez" value="{{date | date: 'yyyy/MM/dd'}}"></ion-input>
+            <ion-label>Komen</ion-label>
+              <ion-input type="text" [(ngModel)]="creviewz" name="creviewz" placeholder="250 patah perkataan sahaja." maxlength="250"></ion-input>
+          </ion-item>
+          <div text-center id="topButtons"> 
+              <button ion-button round (click)="komen()">Komen</button>
+            </div>
+    </div>
+
+</ion-content>

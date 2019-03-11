@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Data Bayi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg" padding>
+  
+<ion-card *ngIf="role=='Parent'" (click)="toRegisterchild()">
+    <img src="assets/imgs/daftaranak.png" />
+  </ion-card>
+
+  <ion-card *ngIf="role=='Parent'" (click)="toViewchild()">
+      <img src="assets/imgs/sanak.png" />
+    </ion-card>
+
+    <ion-card *ngIf="role=='IbuSusuan'" (click)="toAssignchild()">
+        <img src="assets/imgs/daftaranaksusuan.png" />
+      </ion-card>
+
+      <ion-card *ngIf="role=='IbuSusuan'" (click)="toManagechild()">
+          <img src="assets/imgs/senaraianak.png" />
+        </ion-card>
+
+        <ion-card *ngIf="role=='IbuSusuan'" (click)="toAddbmChild()">
+            <img src="assets/imgs/dak.png" />
+          </ion-card>
+
+</ion-content>
